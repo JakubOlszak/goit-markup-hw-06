@@ -16,6 +16,9 @@
   --works-background: rgba(47, 48, 58, 0.8);
   --project-overlay-color: rgba(33, 150, 243, 0.9);
   --modal-background: rgba(0, 0, 0, 0.2);
+  --email-input-border: rgba(255, 255, 255, 0.3);
+  --modal-form-input-border: rgba(33, 33, 33, 0.2);
+  --modal-form-input-comment: rgba(117, 117, 117, 0.5);
 }
 
 * {
@@ -247,7 +250,6 @@ body {
   right: 8px;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   border-radius: 50%;
   padding: 5px;
   height: 30px;
@@ -256,9 +258,146 @@ body {
   cursor: pointer;
 }
 
-.middle {
-  align-items: center;
+
+.modal-title {
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin-bottom: 12px;
 }
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-form-label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: var(--support-color);
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 4px;
+}
+
+.modal-form-input {
+  border: 1px solid var(--modal-form-input-border);
+  border-radius: 4px;
+  height: 40px;
+  padding-left: 41px;
+}
+
+.modal-form-input:hover,
+.modal-form-input:focus {
+  border-color: var(--higlight-color);
+  outline: none;
+}
+
+.modal-form-svg {
+  position: absolute;
+  top: 28px;
+  left: 14px;
+}
+
+.modal-form-item:hover,
+.modal-form-item:focus-within {
+  fill: var(--higlight-color);
+}
+
+.modal-form-comment {
+  border: 1px solid var(--modal-form-input-border);
+  border-radius: 4px;
+  padding: 12px 16px;
+  min-height: 120px;
+}
+
+.modal-form-comment::placeholder {
+  color: var(--modal-form-input-comment);
+}
+
+.modal-form-comment:hover,
+.modal-form-comment:focus {
+  border-color: var(--higlight-color);
+  outline: none;
+}
+
+.modal-form-checkbox {
+  margin-top: 10px;
+}
+
+.modal-form-regulations {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: var(--support-color);
+
+  position: relative;
+}
+
+.modal-form-regulations-text {
+  padding-left: 39px;
+}
+
+.modal-form-regulations input[type="checkbox"] {
+  background-color: var(--white-color);
+  appearance: none;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--black-color);
+  border-radius: 2px;
+
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+
+.modal-form-checkbox-svg {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.modal-form-regulations
+  input[type="checkbox"]:checked
+  + .modal-form-checkbox-svg {
+  opacity: 1;
+}
+
+.modal-form-regulations-link {
+  color: var(--higlight-color);
+}
+
+.modal-form-button {
+  background-color: var(--higlight-color);
+  box-shadow: 0px 4px 4px var(--box-shadow-color);
+  border-radius: 4px;
+  font-weight: 700;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--white-color);
+  cursor: pointer;
+  border-style: none;
+
+  padding: 10px 76px;
+  margin: 20px auto 0;
+  display: block;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
 /* Nasze atuty, Czym się zajmujemy i Nasz zespół  */
 
 .list {
@@ -646,3 +785,60 @@ body {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+.sign-up-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  padding-top: 12px;
+  margin-bottom: 20px;
+}
+
+.sign-up {
+  display: flex;
+  gap: 12px;
+}
+
+.sign-up-text {
+  background-color: var(--background-color);
+  border: 1px solid var(--email-input-border);
+  filter: drop-shadow(0px 4px 4px var(--box-shadow-color));
+  border-radius: 4px;
+  color: var(--white-color);
+  outline: none;
+
+  min-width: 358px;
+  padding: 14px 0 14px 15px;
+}
+
+.sign-up-text::placeholder {
+  line-height: 1.25;
+  color: var(--footer-link-color);
+}
+
+.sign-up-button {
+  background-color: var(--higlight-color);
+  box-shadow: 0px 4px 4px var(--box-shadow-color);
+  border-radius: 4px;
+  font-weight: 700;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--white-color);
+  cursor: pointer;
+  border-style: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 10px 28px 10px 42px;
+
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
