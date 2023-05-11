@@ -258,7 +258,6 @@ body {
   cursor: pointer;
 }
 
-
 .modal-title {
   font-size: 20px;
   line-height: 1.15;
@@ -396,7 +395,6 @@ body {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 /* Nasze atuty, Czym się zajmujemy i Nasz zespół  */
 
@@ -786,7 +784,6 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
 .sign-up-title {
   font-weight: 700;
   font-size: 14px;
@@ -842,3 +839,6 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+textarea {
+  resize: none;
+}
